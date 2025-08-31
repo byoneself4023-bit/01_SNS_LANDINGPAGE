@@ -1,0 +1,377 @@
+/* Custom CSS for AI SNS Marketing Landing Page */
+
+/* Root variables for color palette */
+:root {
+    --primary-dark: #1243A6;
+    --primary: #1D64F2;
+    --dark: #011C40;
+    --light: #F2EED8;
+    --accent: #F24822;
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--light);
+}
+
+/* Animation classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.card-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.feature-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.process-step {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.process-step.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.testimonial-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.testimonial-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pricing-table {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.pricing-table.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero section animations */
+#hero-title.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#hero-subtitle.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#hero-cta.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover effects */
+.hover-lift {
+    transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+/* Button animations */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Card hover effects */
+.bg-white {
+    transition: all 0.3s ease;
+}
+
+.bg-white:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonial card hover */
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Process step hover */
+.process-step:hover {
+    transform: scale(1.05);
+}
+
+/* Modal styles */
+#contactModal {
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+#contactModal .bg-white {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form styles */
+.form-error {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Loading spinner */
+.spinner {
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid var(--primary);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Gradient text effect */
+.gradient-text {
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1025px) {
+    .hero-container {
+        max-width: 800px;
+    }
+    
+    .section-container {
+        max-width: 1200px;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus states for accessibility */
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-dark: #000080;
+        --primary: #0000ff;
+        --dark: #000000;
+        --light: #ffffff;
+        --accent: #ff0000;
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+}
+
+/* Success message styles */
+.success-message {
+    background-color: #10b981;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Feature card stagger animation */
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Process step stagger animation */
+.process-step:nth-child(1) { animation-delay: 0.1s; }
+.process-step:nth-child(2) { animation-delay: 0.2s; }
+.process-step:nth-child(3) { animation-delay: 0.3s; }
+.process-step:nth-child(4) { animation-delay: 0.4s; }
+
+/* Testimonial card stagger animation */
+.testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+.testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Service card stagger animation */
+.card-fade-in:nth-child(1) { animation-delay: 0.1s; }
+.card-fade-in:nth-child(2) { animation-delay: 0.2s; }
+.card-fade-in:nth-child(3) { animation-delay: 0.3s; }
+
+
